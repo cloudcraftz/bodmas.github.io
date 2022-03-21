@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BODMAS</title>
+    <link rel="perconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/css/modal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="/script/calculation.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/modal.js"></script>
+   
+
+
+</head>
+
+<body>
+
+
+    <section>
+        <div class="container">
+
+            <ul>
+                
+                <li>
+                    <button class="btn btn-success" onclick="togglePopup()">Instruction</button>
+                </li>
+                <li>
+                    <button class="btn btn-secondary" onclick="myFunction()">Dark Theme</button>
+                </li>
+                
+
+            </ul>
+
+        </div>
+    </section>
+
+    <section>
+         <div class="heading">
+
+            <h1>BODMAS GAMEPLAY</h1>
+        </div>
+    </section>
+
+    
+
+    <section>
+        <div class="container-box">
+
+            <form class="form-group">
+                <input class="box" type="text" name="" id="N1" value="" readonly>
+                <input class="box" type="text" name="" id="O1" value="" readonly>
+                <input class="box" type="text" name="" id="N2" value="" readonly>
+                <input class="box" type="text" name="" id="O2" value="" readonly>
+                <input class="box" type="text" name="" id="N3" value="" readonly>
+                <span class="equal">&#61;</span>
+                <input class="box" type="text" name="" id="N4" value="" readonly>
+                <br>
+                <input class="box2" type="text" name="" id="N1_2" value="" readonly>
+                <input class="box2" type="text" name="" id="O1_2" value="" readonly>
+                <input class="box2" type="text" name="" id="N2_2" value="" readonly>
+                <input class="box2" type="text" name="" id="O2_2" value="" readonly>
+                <input class="box2" type="text" name="" id="N3_2" value="" readonly>
+                <span class="equal">&#61;</span>
+                <input class="box" type="text" name="" id="N4_2" value="" readonly>
+                <br>
+                <input class="box3" type="text" name="" id="N1_3" value="" readonly>
+                <input class="box3" type="text" name="" id="O1_3" value="" readonly>
+                <input class="box3" type="text" name="" id="N2_3" value="" readonly>
+                <input class="box3" type="text" name="" id="O2_3" value="" readonly>
+                <input class="box3" type="text" name="" id="N3_3" value="" readonly>
+                <span class="equal">&#61;</span>
+                <input class="box" type="text" name="" id="N4_3" value="" readonly>
+                <br>
+            </form>
+
+        </div>
+
+
+    </section>
+    <section>
+        <div class="wrapper">
+
+            
+
+                <br>
+                <div class="wrapper1">
+                    <input class="button" type="button" value="1" id="one">
+                    <input class="button" type="button" value="2" id="two">
+                    <input class="button" type="button" value="3" id="three">
+                    <input class="button" type="button" value="4" id="four">
+                    <input class="button" type="button" value="5" id="five">
+                    <br>
+
+                    <input class="button" type="button" value="6" id="six">
+                    <input class="button" type="button" value="7" id="seven">
+                    <input class="button" type="button" value="8" id="eight">
+                    <input class="button" type="button" value="9" id="nine">
+                    <input class="button" type="button" value="0" id="zero">
+                </div>
+                <div class="wrapper2">
+                    <input class="button m-btn" type="button" value="+" id="plus">
+                    <input class="button m-btn" type="button" value="-" id="minus">
+
+                    <input class="button m-btn" type="button" value="X" id="mult">
+                    <input class="button m-btn" type="button" value="/" id="div">
+
+                    <input class="clr-btn" type="button" value="Clear" id="clear">
+                    <input type="button" value="Enter" class="nextLine_btn" onclick="fun();">
+                    
+                </div>
+
+            <!-- </form> -->
+        </div>
+ </section>
+
+
+    <section>
+        <div class="container-fluid">
+
+            <!-- Instruction Popup -->
+            <div class="popup-cls" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+                    <h4 class="content-h4">How to Play</h4>
+                    <p>Guess the <b>BODMAS</b> in 3 tries.<br>
+                        Each guess must be a valid three numbers(0 - 9) and two operators(+, -, *, /). Hit the enter
+                        button to
+                        submit.<br>
+                        After each guess, the color of the tiles will change to show how close your guess was to the
+                        equation.<br>
+
+                        <b>Examples</b><br>
+                    <div class="box-c">2</div>
+                    
+                    <p>The number <b>2</b> is in the equation and in the correct spot.</p>
+                    <div class="box-p">5</div>
+                  
+                    <p>The number <b>5</b> is in the equation but in the wrong spot.</p>
+                    <div class="box-n">9</div>
+                  
+                    <p>The number <b>9</b> is not in the equation in any spot.</p>
+
+                    <p><b>A new equation will be available after completing the current equation.</b></p>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Wrong Equation Popup -->
+            <div class="popup-cls" id="popup-2">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopupWrong()">&times;</div>
+                    <h2 class="content-h1">Warning</h2><br>
+                    <h4>You have typed wrong equation</h4><br>
+                    <h4>An example equation format is: <b>1 + 8 * 3</b></h4>
+                </div>
+            </div>
+
+
+
+
+            <!-- Congratualation Popup -->
+            <div class="popup-cls" id="popup-3">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopupCongratualation()">&times;</div>
+                    <h1 class="content-h1">Congratualation</h1>
+                    <h4>You won the game👍</h4>
+                    <p>Click Next for another equation</p>
+                    <button><a href="#" class="next">Next &raquo;</a></button>
+                </div>
+            </div>
+            <!--Lost Popup-->
+            <div class="popup-cls" id="popup-4">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopupLose()">&times;</div>
+                    <h1 class="content-h1">Alas!</h1>
+                    <h3>You lost the game😢</h3>
+                    <h4>Equation is -</h4>
+                    <div id="equation">
+
+                    </div>
+                    <h4>Click Next for a New Equation</h4>
+                    <button><a href="#" class="next ">Next &raquo;</a></button>
+                </div>
+            </div>
+
+            <!--Reesult not same Popup-->
+            <div id="snackbar">Result dosen't match</div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
